@@ -49,16 +49,16 @@
     <div class="col-md-12">
            
         <div class="panel panel-default" id="panelResult" >
-                        <div class="panel-heading">
-                            <i class="fa fa-list fa-fw"></i> Resultados de la busqueda
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body"  id="resultsearch">
-                            <!--En este espacio se carga la reserva de un usuario o mensajes de advertencia-->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
+            <div class="panel-heading">
+                <i class="fa fa-list fa-fw"></i> Resultados de la busqueda
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body"  id="resultsearch">
+                <!--En este espacio se carga la reserva de un usuario o mensajes de advertencia-->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
     </div>
     
 </div>
