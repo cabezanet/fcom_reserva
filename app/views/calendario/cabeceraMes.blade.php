@@ -1,0 +1,9 @@
+<tr>
+	<th>Lunes</th>
+	<th>Martes</th>
+	<th>Miércoles</th>
+	<th>Jueves</th>
+	<th>Viernes</th> 
+	<th>Sabado</th>
+	<th>Domingo</th>
+</tr>

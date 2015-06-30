@@ -1,0 +1,35 @@
+     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">  
+    <head>  
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />  
+    <title>JavaScript document Object - anchor Property example</title>  
+    </head>  
+    <body>  
+    <h1 style="color: red">JavaScript document Object : anchor property</h1>  
+    <h3> Click on the button to get the Anchor Names.</h3>  
+    <hr />  
+    <script type="text/javascript">  
+    function ShowAppletName()  
+    {  
+    document.write(document.applets[0].name);  
+    document.write(document.applets[1].name);  
+    }  
+    </script>  
+    <applet name = "Applet-1"  
+    code= " "  
+    width = "40"  
+    height = "40">  
+    </applet>  
+    <p><applet name = "Applet-2"  
+    code= " "  
+    width = "40"  
+    height = "40">  
+    </applet>  
+    <br />  
+    <form action="#">  
+    <input name= 'buton' type ='button' value='Button-1'  
+    onclick="ShowAppletName()"/>  
+    </form>  
+    </body>  
+    </html></p>  
