@@ -1,0 +1,36 @@
+1. Formulario activación de usuario
+2. Envio de mail to responsable activación de cuenta
+3. Login sso.
+
+
+Public/assets/js 	-> 
+					-> 
+
+Public/assets/css 	-> bootstrap-table.css
+
+Public/assets/img	-> 
+
+Controller			-> CalendarController.php
+					-> ValidacionesController.php
+
+view/pagination		-> slider.php
+view/validador		-> index.blade.php 
+					-> layout.blade.php
+					-> validaciones.blade.php
+view/tecnico		-> layout.blade.php
+					-> index.blade.php
+					-> espacios.blade.php
+					-> informes.blade.php	
+
+class 				-> 
+					-> 
+					-> 	
+
+model 				-> 
+					-> 
+					-> 
+
+app					-> route.php
+
+app/config			-> view.php
+					-> 
