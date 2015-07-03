@@ -22,15 +22,15 @@
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body" class="middle">
-                    <div id="LeerDNI">
-                        <applet id="lector"  
-                            code="fcom.maviuno.LectorCarnetUniversitario/InfoUI.class" 
-                            codebase="https://150.214.225.41/reserva/public/assets/applet" 
-                            archive="LectorCarnetUniversitario.jar, json-simple-1.1.1.jar" 
-                            width=448 
-                            height=308>
-                        </applet>
-                    </div>
+                <div id="LeerDNI">
+                    <applet id="lector"  
+                        code="fcom.maviuno.LectorCarnetUniversitario/InfoUI.class" 
+                        codebase="https://150.214.225.41/reserva/public/assets/applet" 
+                        archive="LectorCarnetUniversitario.jar, json-simple-1.1.1.jar" 
+                        width=448 
+                        height=308>
+                    </applet>
+                </div>
                 <a id="botonBuscar" type="submit" class="btn btn-primary">Reservas</a>   
                 <div class="form-group">
                     <label hidden for="dni">DNI:</label>
@@ -49,16 +49,16 @@
     <div class="col-md-12">
            
         <div class="panel panel-default" id="panelResult" >
-                        <div class="panel-heading">
-                            <i class="fa fa-list fa-fw"></i> Resultados de la busqueda
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body"  id="resultsearch">
-                            <!--En este espacio se carga la reserva de un usuario o mensajes de advertencia-->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
+            <div class="panel-heading">
+                <i class="fa fa-list fa-fw"></i> Resultados de la busqueda
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body"  id="resultsearch">
+                <!--En este espacio se carga la reserva de un usuario o mensajes de advertencia-->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
     </div>
     
 </div>

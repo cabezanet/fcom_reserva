@@ -25,12 +25,7 @@ class cMail {
 		if ($self->requiredMail($currentAction) && $self->numValidadores($id_recurso) > 0) {
 			
 			//Se obtienen los valdadores con envio de mail activo
-			$validadores = Recurso::find($id_recurso)->validadores()->whereHas('supervisa', function($q)
-			{
-	    		$q->where('mail', '=', '1');
-			})->get();
-
-			
+			$validadores = Recurso::find($id_recurso)->validadores()->where('mail', '=', true)->get();
 			//Para cada validador
 			foreach ($validadores as $validador) {
 				//Exclude self user if validator (excluyendose a si mismo, si se da el caso)
@@ -110,12 +105,17 @@ class cMail {
 	private function numValidadores($id_recurso = ''){
 		$numberOfValidadores = 0;	
 		//get number of validadores with mail active for this id_recurso
-		$numberOfvalidadores = Recurso::find($id_recurso)->validadores()->whereHas('supervisa', function($q)
-			{
-	    		$q->where('mail', '=', '1');
-			})->count();
+		
+ 		$validadores = Recurso::find($id_recurso)->validadores;
+ 	
+ 		if (count($validadores) > 0) { //si hay validadores;
+			$numberOfvalidadores = Recurso::find($id_recurso)->validadores()->where('mail', '=', true)->count();
+			
+		}
+		
 		return $numberOfvalidadores;
 	}
+
 }
 
 ?>

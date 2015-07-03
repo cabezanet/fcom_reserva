@@ -15,7 +15,7 @@
 
 
 Route::get('msg',array('as' => 'msg',function(){
-	$msg = "Acceso denegado";
+	$msg = "Acceso denegado... NO tienes suficientes privilegios para acceder.";
 	return View::make('msg')->with(compact('msg'));
 }));
 
@@ -26,7 +26,6 @@ Route::get('wellcome',array('as'=>'wellcome',function(){
 		Cas::logout();
 	}
 }));
-
 
 Route::get('/', array('as' => 'inicio', function (){
 		Redirect::to(route('loginsso'));
@@ -130,15 +129,20 @@ Route::get('logout',array('as'=>'logout',function(){
 }));
 
 Route::get('test',array('as'=>'test',function(){
-	$user = User::where('dni','=','49130584')->first();
-	//$user->id = ;	
- 	$events = Evento::where('user_id','=',$user->id)->get();
- 	print_r($events);
- 	echo $events->count();
- 	if (!empty($events)) echo "no vacio";
+	
+	$eventos = Evento::where('fechaInicio','>','1-6-2015')->get();
+	$calendario = new sgrCalendario('6','2015','recurso',$eventos);
 
+	echo "<pre>";
+	var_dump($calendario->diasCalendario);
+	echo "</pre>";
+	
 	}));
 
+Route::get('testCalendario',array('as'=>'testCalendario','uses'=>'CalendarController@calendario'));
+
+
+//ok -> Route::get('testGeneraCalendario',array('as'=>'testCalendario','uses'=>'CalendarController@generaCalendario'));
 
 
 
@@ -235,8 +239,13 @@ Route::get('admin/adduser.html',array('as' => 'adminAdduser.html',function(){
 			},'before' => array('auth','capacidad:4,msg')
 		));
 
+Route::get('admin/pod.html',array('as' => 'pod.html',function(){
+			return View::make('admin.pod');
+			},'before' => array('auth','capacidad:4,msg')
+		));
 
-
+Route::post('admin/pod.html',array('as' => 'uploadPOD','uses' => 'PodController@testCsv',
+			'before' => array('auth','capacidad:4,msg')));
 
 
 Route::get('admin/config.html',array('as' => 'config.html',function(){
@@ -288,9 +297,6 @@ Route::get('tecnico/home.html',array('as' => 'tecnicoHome.html',function(){
 			'before' => array('auth','capacidad:3,msg')
 			));
 
-//Route::get('tecnico/home.html', array( 'uses' => 'CalendarController@showCalendarViewMonth',
-//			));
-
 Route::get('tecnico/espacios.html',array(	'as'		=> 'tecnicoEspacios.html',
 											'uses'		=> 'recursosController@listRecursos',
 											'before'	=> array('auth','capacidad:3,msg')
@@ -307,14 +313,18 @@ Route::post('tecnico/home.html',array(	'uses' => 'CalendarController@search',
 										'before' => array('auth','capacidad:3,msg')
 									 ));
 
+Route::post('tecnico/search',array('uses' => 'CalendarController@search', 'before' => array('auth', 'capacidad:3,msg')));
 
-Route::post('tecnico/search',array(	'uses' => 'CalendarController@search',
-										'before' => array('auth','capacidad:3,msg')
-									 ));
+Route::get('tecnico/atenderReserva', function()
+	{ 
+		return View::make('atenderReserva');
+	});
 
 //Todos los perfiles
-Route::get('calendarios.html',array('as' => 'calendarios.html','uses' => 'CalendarController@showCalendarViewMonth',
-			'before' => array('auth','capacidad:1-2-3-4-5,msg')));
+Route::get('calendarios.html',array('as' => 'calendarios.html',
+									'uses' => 'CalendarController@showCalendarViewMonth',
+									'before' => array('auth','capacidad:1-2-3-4-5,msg'),
+									));
 		/*
 		El filtro req2 permite bloquear el acceso al calendario para reservar a los alumnos con el número de horas máximo a la semana (12h) agotado
 		*/

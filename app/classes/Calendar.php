@@ -197,9 +197,6 @@ class Calendar {
 
 		
 		$caption = '<span id="alternate">'.$day. ' / '.Date::getNameMonth($month,$year).' / '.$year.'</span>';
-		//$caption = '<span id="alternate">'.$day. ' / '.Date::getNameMonth($month,$year).' / '.$year.'</span>';
-		//$caption .= ;
-
 		return $caption;
 	}
 
@@ -556,31 +553,4 @@ class Calendar {
 	}
 
 	
- /*
-    private $aMonth = array ('1' => 'Enero',
-							'2' => 'Febrero',
-							'3' => 'Marzo',
-							'4' => 'Abril',
-							'5' => 'Mayo',
-							'6' => 'Junio',
-							'7' => 'Julio',
-							'8' => 'Agosto',
-							'9' => 'Septiembre',
-							'10' => 'Octubre',
-							'11' => 'Noviembre',
-							'12' => 'Diciembre');
-
-    private $aAbrNameMonth = array ('1' => 'Ene',
-									'2' => 'Feb',
-									'3' => 'Mar',
-									'4' => 'Abr',
-									'5' => 'May',
-									'6' => 'Jun',
-									'7' => 'Jul',
-									'8' => 'Ago',
-									'9' => 'Sep',
-									'10' => 'Oct',
-									'11' => 'Nov',
-									'12' => 'Dic');
-*/
 }

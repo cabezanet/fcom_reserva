@@ -8,7 +8,7 @@
 
 
 <div class="col-sm-6 col-md-3 sidebar"  style="margin-top:20px !important;">
-  
+  <p>{{$nh}}</p>
   <form class="form" role="form" id="selectRecurse" >
     <div class="form-group">
     <label for="groupName">Seleccione recurso</label> 
@@ -73,7 +73,7 @@
 
       
 
-      
+      <!-- en vista calendario.blade.msg -->
       @if(isset($msg) && !empty($msg))
         <div class="alert alert-danger pull-left col-sm-12" role="alert" id="alert_msg" data-nh="{{$nh}}"><strong>{{$msg}}</strong></div> 
       @else
@@ -82,11 +82,11 @@
       @endif
       
       <div style = "display:none" id = "message" class = "alert alert-success col-md-12" role="alert">
-     
+     <!-- en vista calendario.blade.msg -->
       </div>
 
 
-      
+      <!-- en vista calendario.calendario -->
       <div id="loadCalendar">  
         <table class="pull-left" style = "table-layout: fixed;width: 100%;" id="tableCalendar" >
           <caption id="tableCaption">{{$tCaption}}</caption>
@@ -94,6 +94,7 @@
           <tbody id="tableBody">{{$tBody}}</tbody>
         </table>
       </div>
+      <!-- fin en vista calendario.calendario -->
     </div>   
 
 

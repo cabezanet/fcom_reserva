@@ -11,6 +11,12 @@ class Recurso extends Eloquent {
         return $this->belongsToMany('User');
     }
 
+    public function supervisores()
+    {
+        return $this->belongsToMany('User','supervisores')->withPivot('requireMail');
+    }
+
+    
     public function events(){
 
         //recurso_id -> foreign_key
@@ -18,8 +24,6 @@ class Recurso extends Eloquent {
         return $this->hasMany('Evento','recurso_id','id');
     
     }
-
-    
 
     public function scopetipoDesc($query)
     {

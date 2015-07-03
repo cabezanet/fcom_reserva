@@ -17,11 +17,11 @@ class ACL {
 		$fm = date('Y-m-d',$fristMonday); //formato para la consulta sql (fechaIni en Inglés)
 		$lf = date('Y-m-d',$lastFriday); //formato para la consulta sql (fechaFin en Inglés)
 
-		/*$events = Auth::user()->userEvents()->where('fechaEvento','>=',$fm)->where('fechaEvento','<=',$lf)->get();
+		$events = Auth::user()->userEvents()->where('fechaEvento','>=',$fm)->where('fechaEvento','<=',$lf)->get();
 
 		foreach ($events as $key => $event) {
 			$nh = $nh + Date::diffHours($event->horaInicio,$event->horaFin);
-		}*/
+		}
 		
 		return $nh;
 	}	

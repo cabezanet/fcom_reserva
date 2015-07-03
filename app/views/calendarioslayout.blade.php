@@ -74,22 +74,21 @@
  
  
 
-</div>
+</div><!-- /#wrapper -->
 
 
-<div class ="row col-md-12  col-xs-12 text-right" id ="credits">
-        <div class="">
-        <a href="http://fcom.us.es" alt="Facultad de Comunicación"><img src = "{{ asset('assets/img/logofcom.png') }}"></a>
+<div class ="row">
+    <div class="col-lg-12  col-xs-12 text-right" id="credits">
+      <a href="http://fcom.us.es" alt="Facultad de Comunicación"><img src = "{{ asset('assets/img/logofcom.png') }}"></a>
         &nbsp;&nbsp;&nbsp;<a href="http://www.us.es" alt="Universidad de Sevilla"><img src = "{{ asset('assets/img/logo_us.jpg') }}"></a>
-        </div>
            
       <div class="">
         Developed by UNITIC Facultad de Comunicación. Universidad de Sevilla.
       </div>
-   
-    </div>
+   </div>
+</div>
 
- <!-- /#wrapper -->
+ 
 <!-- scripts -->
 
 {{HTML::script('assets/js/jquery-1.11.0.js')}}

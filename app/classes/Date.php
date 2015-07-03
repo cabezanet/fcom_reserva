@@ -247,6 +247,7 @@ class Date{
 		$endTime = $self->getTimeStamp($fFin,'-');
 		$currentTime = $startTime;
 		//$nextTime = strtotime('Next ' . $aDaysWeek[$dWeek],$currentTime);
+		if ($startTime == $self->getTimeStamp($fInicio,'-')) $numRepeticiones++;
 		if ($startTime <= $endTime){
 			do {
 				$numRepeticiones++;
@@ -254,7 +255,7 @@ class Date{
 				$currentTime = $nextTime;
 			} while($nextTime <= $endTime);	
 		}
-		
+		if ($endTime == $self->getTimeStamp($fFin,'-')) $numRepeticiones++;
 		//echo $numRepeticiones;
 		return $numRepeticiones;
 	}
@@ -333,6 +334,62 @@ class Date{
 
 
 		return $strDaysWeek;
+	}
+
+	public static function dateCSVtoDB($date){
+		//Esperamos de entrada fecha en formato dd-mesAbr(3)-yyyy, ejemplo 01-ene-2015
+
+		$mifecha = explode('-',$date);
+		$dia = $mifecha[0];
+		$mes = strtolower($mifecha[1]);
+		$anno = $mifecha[2];
+
+		$translateMonth = array('ene'	=>	'01',
+								'feb'	=>	'02',
+								'mar'	=>	'03',
+								'abr'	=>	'04',
+								'may'	=>	'05',
+								'jun'	=>	'06',
+								'jul'	=>	'07',
+								'ago'	=>	'08',
+								'sep'	=>	'09',
+								'oct'	=>	'10',
+								'nov'	=>	'11',
+								'dic'	=>	'12',);
+
+		$numMes = $translateMonth[$mes];
+		$timeStamp = mktime(0,0,0,$numMes,$dia,$anno);
+		$fechaDB = date('Y-m-d',$timeStamp);
+
+		return $fechaDB;
+	}
+
+	public static function dateCSVtoSpanish($date){
+		//Esperamos de entrada fecha en formato dd-mesAbr(3)-yyyy, ejemplo 01-ene-2015
+
+		$mifecha = explode('-',$date);
+		$dia = $mifecha[0];
+		$mes = strtolower($mifecha[1]);
+		$anno = $mifecha[2];
+
+		$translateMonth = array('ene'	=>	'01',
+								'feb'	=>	'02',
+								'mar'	=>	'03',
+								'abr'	=>	'04',
+								'may'	=>	'05',
+								'jun'	=>	'06',
+								'jul'	=>	'07',
+								'ago'	=>	'08',
+								'sep'	=>	'09',
+								'oct'	=>	'10',
+								'nov'	=>	'11',
+								'dic'	=>	'12',);
+
+		$numMes = $translateMonth[$mes];
+		$timeStamp = mktime(0,0,0,$numMes,$dia,$anno);
+		$fechaDB = date('d-m-Y',$timeStamp);
+
+		return $fechaDB;
 	}
 }
 ?>

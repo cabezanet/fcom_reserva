@@ -39,8 +39,7 @@ App::after(function($request, $response)
 Route::filter('auth', function()
 {
 	$user = User::find(29);
-
-	Auth::login($user);	
+	Auth::login($user);
 	if (Auth::guest()) return Redirect::to(route('loginsso'));
 });
 

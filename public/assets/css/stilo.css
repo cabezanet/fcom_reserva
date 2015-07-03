@@ -205,6 +205,7 @@ a.linkpopover{
           
   border-top:1px solid #eee;
   top: 100%;
+  left: 0px;
   padding-top: 15px;
   padding-bottom: 5px;
 }

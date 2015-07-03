@@ -14,15 +14,29 @@ return array (
 	//Máximo de horas a la semana para usuarios del perfil alumno
 	'max_horas'	=> '12',
  
-	//eventos que generan mail
-	'required_mail' => array('add' => 0,
-							 'edit' => 1,
-							 'del'	=> 2,
-							 'allow' => 3,
-							 'deny' => 4,
-							 'request' => 5,),
+	//acciones que puede realizar un usuario en el sistema
+	'actions' => array(	'ADDRESERVA',
+						'EDITRESERVA',
+						'DELRESERVA',
+						'SOLICITARRESERVA',
+						'APROBARRESERVA',
+						'DENEGARRESERVA',
+						'RESERVAMULTIPLE', //Reservar multiples puestos o equipos en una sola petición
+					),
+
+	'puesto' => 'PUESTO',
+	'espacio' => 'ESPACIO',
+	'equipo'=> 	'EQUIPO',
+	
+	'reservaMultiple' => 'RESERVAMULTIPLE',	
+	
+	'roles' => array(	'alumnos' 		=>	'Alumno',
+						'pdi'			=>	'PDI',
+						'pas'			=>	'PAS',
+						'validador'		=>	'VALIDADOR',
+						'administrador'	=> 'ADMINISTRADOR',
+						),
+	'defaultVistaCalendario' => 'month',
 
 	);
-	
-	
 ?>

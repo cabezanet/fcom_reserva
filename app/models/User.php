@@ -21,6 +21,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface{
 		return $this->hasMany('Evento','user_id');
 	
 	}
+	public function rol(){
+		return $this->belongsTo('Role','capacidad');
+	}
+	
+
 	/**
 	 * Get the unique identifier for the user.
 	 *
@@ -80,6 +85,22 @@ class User extends Eloquent implements UserInterface, RemindableInterface{
 	     parent::setAttribute($key, $value);
 	   }
 	}
+
+	public function getHorasReservadas($tsFechaInicio,$tsFechaFin){
+			
+			$events = array();
+			$horas = 0;
+
+
+			$events = $this->userEvents()->where('fechaEvento','>=',date('Y-m-d',$tsFechaInicio))->where('fechaEvento','<=',date('Y-m-d',$tsFechaFin))->get();
+			
+			foreach ($events as $key => $event) {
+				$horas = $horas + sgrFechas::horas($event->horaInicio,$event->horaFin);
+			}
+
+			return $horas;
+	}
+
 
 	public function getNamePerfil(){
 		

@@ -21,6 +21,7 @@ $(function(e){
 					$('#resultsearch').html(respuesta);
 					programclick();
 					//$('#panelResult').fadeIn('slow');
+					//console.log('{"dni":"' + $('#dni').val() + '"}');
 	        		
 		        	},
 				error: function(xhr, ajaxOptions, thrownError){

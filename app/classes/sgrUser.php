@@ -1,0 +1,8 @@
+<?php
+
+	class sgrUser {
+
+		
+	}
+
+?>

@@ -34,3 +34,10 @@ app					-> route.php
 
 app/config			-> view.php
 					-> 
+1. Mucho ojo en producción --> $notificacion->target = '1';//identificador del usuario admin
+2. Desarrollo la posibilidad de que un usuario actualice su perfil.
+3. Atención de reservas técnicos MMAA
+4. Administrador -> gestión de usuarios.
+5. Sesión cerrada y ajjax function -> filtro para enviar a la página de login??
+6. Pedir sso nombre, apellidos y dni del usuario.
+7. Gestión de usuarios -> borrar usuarios.

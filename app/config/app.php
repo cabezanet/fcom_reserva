@@ -106,7 +106,7 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-		'Xavrsl\Cas\CasServiceProvider',
+		'Xavrsl\Cas\CasServiceProvider',	
 		
 	),
 
@@ -174,7 +174,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Carbon'		  => 'Carbon/Carbon',
-		'Cas' => 'Xavrsl\Cas\Facades\Cas',
+		'Cas' 			  => 'Xavrsl\Cas\Facades\Cas',		
 
 	),
 

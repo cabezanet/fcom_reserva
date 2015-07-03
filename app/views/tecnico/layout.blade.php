@@ -85,11 +85,9 @@
           <li>
             <a href="{{route('calendarios.html')}}"><i class="fa fa-calendar fa-fw"></i> Reservar</a>
           </li>
-
           <li>
             <a href="informes.html"><i class="fa fa-search fa-fw"></i> Buscar</a>
           </li>
-
           <li>
             <a href="informes.html"><i class="fa fa-wrench fa-fw"></i> Informes</a>
           </li>
@@ -110,17 +108,17 @@
 
 
 </div>
-<div class ="row col-lg-12  col-xs-12 text-right" id ="credits">
-        <div class="">
-        <a href="http://fcom.us.es" alt="Facultad de Comunicación"><img src = "{{ asset('assets/img/logofcom.png') }}"></a>
+
+
+
+<div class ="row">
+    <div class="col-lg-12  col-xs-12 text-right" id="credits">
+      <a href="http://fcom.us.es" alt="Facultad de Comunicación"><img src = "{{ asset('assets/img/logofcom.png') }}"></a>
         &nbsp;&nbsp;&nbsp;<a href="http://www.us.es" alt="Universidad de Sevilla"><img src = "{{ asset('assets/img/logo_us.jpg') }}"></a>
-        </div>
-           
       <div class="">
         Developed by UNITIC Facultad de Comunicación. Universidad de Sevilla.
       </div>
-   
-    </div>
+</div>
     <!-- /#wrapper -->
     @yield('calendar-js')
     <!--  {{HTML::script('assets/js/jquery-1.11.0.js')}}
@@ -129,6 +127,8 @@
       {{HTML::script('assets/js/plugins/morris/raphael.min.js')}}
       {{HTML::script('assets/js/plugins/morris/morris.js')}}
       {{HTML::script('assets/js/sb-admin-2.js')}}
+   </div>
+</div>
 
 -->
 <script src="../assets/js/jquery-1.11.0.js"></script>
@@ -142,6 +142,8 @@
 <script src="../assets/js/testBoton.js"></script>
 
 <script src="../assets/js/jquery-iframeshim.js"></script>
+
+@yield('calendar-js')
 
 </body>
 </html>
