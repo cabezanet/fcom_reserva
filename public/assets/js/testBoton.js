@@ -10,7 +10,7 @@ $(function(e){
 
 	$('#dni').on('change', function(){
 		
-		console.log('{"dni":"' + $('#dni').val() + '"}');
+		//console.log('{"dni":"' + $('#dni').val() + '"}');
 		//$('#panelResult').fadeToggle('slow');
 		$.ajax({
 	    	   	type: "POST",
@@ -19,7 +19,7 @@ $(function(e){
 				
 				success: function(respuesta){
 					$('#resultsearch').html(respuesta);
-					programclick();
+					programclick(respuesta);
 					//$('#panelResult').fadeIn('slow');
 					//console.log('{"dni":"' + $('#dni').val() + '"}');
 	        		
@@ -31,13 +31,18 @@ $(function(e){
 	      			});
 	});
 
-	function programclick() {
+	function programclick(respuesta) {
 			$('.list-group-item').each(function(){
+  					
 					$(this).on('click',function(e){
+
+						//console.log(document.getElementsByTagName("a")[0].innerHTML);
 						//e.preventDefault();
 						//alert('Formulario de Reserva atendida...');
 					    $( '#myModal' ).modal();
-					    /*
+					   	var $dataEvent = $(this).data('event');
+					   	$('titulo').val($dataEvent.titulo);
+						console.log($(this).data('event'));					   
 					    $('#myModal').on('shown.bs.modal', function(e){
 					      jQuery('#lector').hide();
 					    });
@@ -45,7 +50,7 @@ $(function(e){
 					    $('#myModal').on('hidden.bs.modal', function(e){
 					      jQuery('#lector').show();
 					    })
-						*/
+						
 					});
 				});
 		}

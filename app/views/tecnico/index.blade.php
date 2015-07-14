@@ -23,13 +23,25 @@
             <!-- /.panel-heading -->
             <div class="panel-body" class="middle">
                 <div id="LeerDNI">
+                    <!--
                     <applet id="lector"  
                         code="fcom.maviuno.LectorCarnetUniversitario/InfoUI.class" 
-                        codebase="https://150.214.225.41/reserva/public/assets/applet" 
+                        codebase="https://localhost/reserva/public/assets/applet" 
                         archive="LectorCarnetUniversitario.jar, json-simple-1.1.1.jar" 
                         width=448 
                         height=308>
                     </applet>
+                -->
+                    <embed id="lector"
+                        type="application/x-java-applet"
+                        width="448"
+                        height="308"
+                        code="fcom.maviuno.LectorCarnetUniversitario/InfoUI.class"
+                        codebase="https://localhost/reserva/public/assets/applet"
+                        archive="LectorCarnetUniversitario.jar, json-simple-1.1.1.jar"
+                        pluginpage="http://java.com/download/" 
+                    /> 
+
                 </div>
                 <a id="botonBuscar" type="submit" class="btn btn-primary">Reservas</a>   
                 <div class="form-group">
@@ -63,23 +75,11 @@
     
 </div>
 
-<!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
+    <div class="modal-dialog modal-lg">
+     
+      <div class="modal-content">asdads</div>
+   
 </div>
 
 @stop
