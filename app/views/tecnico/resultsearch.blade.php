@@ -45,7 +45,7 @@
             <div class="form-group" id="titulo">
               <label for="titulo" class="control-label col-sm-2">Título: </label>   
               <div class="col-sm-10">  
-                <input name="titulo" disabled read-only class="form-control" placeholder="Introducir título de la reserva" id="newReservaTitle" type="text">
+                <input name="titulo" vaLue=''{{$events[id]}} class="form-control" placeholder="Introducir título de la reserva" id="newReservaTitle" type="text">
                  
               </div>             
             </div>
